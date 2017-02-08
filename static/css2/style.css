@@ -1,3 +1,4 @@
+
 html, body {
     height: 100%;
     margin: 0;
@@ -113,8 +114,4 @@ footer {
     bottom: 0px;
     width: 100%;
     background-color: #FFFFFF;
-}
-@font-face {
-    font-family: 'Montserrat';
-    src: url(../../static/bootstrap/fonts/Montserrat.woff2);
 }
