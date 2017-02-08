@@ -1,0 +1,120 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #F15025;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    text-indent: 4em;
+}
+
+#custombar {
+    background-color: #F15025;
+    font:;
+    text-transform: uppercase;
+}
+
+#custombar-brand, #custombar-brand:hover {
+    color: #FFFFFF;
+    background-color: #F15025;
+}
+
+#converter {
+    background-color: #f4f4f4;
+    width: 60%;
+    height: 200px;
+    margin:auto;
+    border-radius: 2px;
+    padding: 3.333333333333333%;
+    position: relative;
+    z-index: 1;
+}
+
+/*w:560px;p:20px;*/
+
+#converter #title {
+    color: #0087cf;
+    font-size: 15px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 18px;
+}
+
+#converter form {
+    background-color: #ffffff;
+    height: 42px;
+    border: 1px #0087cf solid;
+    border-radius: 2px;
+    margin-top: 20px;
+}
+
+
+/*w:558px;*/
+
+#converter form #input {
+    color: #0087cf;
+    font-size: 15px;
+    font-family: 'Consolas';
+    font-weight: 400;
+    line-height: 42px;
+    float: left;
+    width: 84.58781362007168%;
+    height: 36px;
+    border: none;
+    margin: 0 0.5376344086021505%;
+    padding: 0;
+}
+
+
+/*w:472px;m:3px;*/
+
+#converter form #button {
+    color: #ffffff;
+    background-color: #0087cf;
+    font-size: 15px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    line-height: 36px;
+    width: 13.79928315412186%;
+    height: 36px;
+    border: none;
+    border-radius: 2px;
+    margin: 3px 0.5376344086021505% 0 0;
+    padding: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+
+#converter #buttons {
+    margin-top: 17px;
+    display: none;
+}
+
+
+article {
+    display: block;
+    background-color: yellow;
+}
+
+footer {
+    position: fixed;
+    left: 0px;
+    text-indent: 4em;
+    bottom: 0px;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../../static/bootstrap/fonts/Montserrat.woff2);
+}
