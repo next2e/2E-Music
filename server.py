@@ -8,6 +8,7 @@ import threading
 app = Flask(__name__)
 
 current = None
+queue = []
 
 @app.route("/")
 def index():
@@ -23,14 +24,28 @@ def submit():
 
 @app.route("/delet")
 def delet():
+    global current
     current.kill()
+    current = None
     return "Stopped current song"
 
 def addurl(url):
     video = pafy.new(url)
     filename = video.getbestaudio().download(filepath='files', quiet=True, callback=download)
-    global current
-    current = subprocess.Popen(['cvlc', filename, '--play-and-exit'])
+    queue.append(filename)
+    if not current:
+        nextsong()
+
+def nextsong():
+    print(queue)
+    def songproc():
+        global current
+        current = subprocess.Popen(['vlc', queue.pop(0), '--play-and-exit'])
+        current.wait()
+        nextsong()
+
+    if len(queue):
+        threading.Thread(target=songproc).start()
 
 def download(total, recvd, ratio, rate, eta):
     print(ratio)
