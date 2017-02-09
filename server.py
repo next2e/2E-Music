@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from requests import get
 import json
 import pafy
@@ -27,7 +27,17 @@ def delet():
     global current
     current.kill()
     current = None
-    return "Stopped current song"
+    return ''
+
+@app.route("/volup")
+def volup():
+    subprocess.Popen(['amixer','-D','pulse','sset','Master','10%+'])
+    return ''
+
+@app.route("/voldown")
+def voldown():
+    subprocess.Popen(['amixer','-D','pulse','sset','Master','10%-'])
+    return ''
 
 def addurl(url):
     video = pafy.new(url)
@@ -36,12 +46,18 @@ def addurl(url):
     if not current:
         nextsong()
 
+@app.route("/queue")
+def getqueue():
+    print(queue)
+    return jsonify(queue)
+
 def nextsong():
     print(queue)
     def songproc():
         global current
         current = subprocess.Popen(['vlc', queue.pop(0), '--play-and-exit'])
         current.wait()
+        current = None
         nextsong()
 
     if len(queue):
