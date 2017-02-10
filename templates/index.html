@@ -9,7 +9,9 @@
     <meta name="description" content="I'm sorry it's so bad">
     <meta name="author" content="Mostly cor, Joon was there too">
     <link rel="icon" href="../../static/img/favicon.jpg">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
     <title>2E Music Memes</title>
 
@@ -22,15 +24,10 @@
     <!-- Custom styles for this template -->
     <link href="../../static/bootstrap/css/sticky-footer-navbar.css" rel="stylesheet">
 
+    <!-- My meme css -->
     <link href="../../static/css2/style.css" rel="stylesheet">
 
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script src="../../static/js/main.js"></script>
 </head>
 
 <body>
@@ -55,7 +52,7 @@
 
     <!-- Begin page content -->
     <div class="container">
-        <div class="page-header" style=font-family:'Montserrat'>
+        <div id="customheader" class="page-header" style=font-family:'Montserrat'>
             <h1>Welcome</h1>
         </div>
 
@@ -63,13 +60,24 @@
     </div>
     <div id="converter">
         <div id="title">
-            Input your memes here:
+            Input your video here (Youtube or similar):
         </div>
-        <form action = "submit" method="post">
-            <input id="input" type = "text" name="video" autocomplete="off">
-            <input id="button" value="Submit" type="submit">
+        <form>
+            <input id="input" type="text" name="video" autocomplete="off">
+            <input class="btn btn-default" id="button" value="Submit">
         </form>
+            <button class="btn btn-danger" id="volup"><i class="glyphicon glyphicon-volume-up"></i> Louder </button>
+            <button class="btn btn-info" id="voldown"><i class="glyphicon glyphicon-volume-down"></i> Unlouder</button>
+            <button class="btn btn-warning" id="delet"><i class="glyphicon glyphicon-forward"></i> Skip</button>
 
+    </div>
+
+    <div id="what_the_fuck_is_this_MEME_div_what_am_i_even_DOING_damn_how_does_jessica_do_this_shit" style="height: 25px"></div>
+
+    <div id="content" style="max-width:800px;margin: auto;font-size:18px;">
+      <div id="queue">
+
+      </div>
     </div>
 
     <footer class="footer">

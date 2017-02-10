@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    line-height: 1;
 }
 
 header {
@@ -14,33 +15,58 @@ header {
     text-indent: 4em;
 }
 
+#customheader {
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+}
+
 #custombar {
     background-color: #F15025;
-    font:;
+    font-family: 'Montserrat';
     text-transform: uppercase;
+    height: 60px;
 }
 
 #custombar-brand, #custombar-brand:hover {
     color: #FFFFFF;
     background-color: #F15025;
+    font-size: 30px;
+    padding: 19px 15px;
 }
 
 #converter {
     background-color: #f4f4f4;
-    width: 60%;
+
     height: 200px;
     margin:auto;
     border-radius: 2px;
-    padding: 3.333333333333333%;
+    padding: 40px 30px 20px 30px;
     position: relative;
     z-index: 1;
+}
+
+@media (min-width:768px) {
+    #converter {
+        width: 720px
+    }
+}
+
+@media (min-width:992px) {
+    #converter {
+        width: 940px
+    }
+}
+
+@media (min-width:1200px) {
+    #converter {
+        width: 1140px
+    }
 }
 
 /*w:560px;p:20px;*/
 
 #converter #title {
-    color: #0087cf;
-    font-size: 15px;
+    font-size: 16px;
     font-family: 'Montserrat';
     font-weight: 500;
     text-align: left;
@@ -53,25 +79,26 @@ header {
 #converter form {
     background-color: #ffffff;
     height: 42px;
-    border: 1px #0087cf solid;
+    border: 1px #F15025 solid;
     border-radius: 2px;
-    margin-top: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 
 /*w:558px;*/
 
 #converter form #input {
-    color: #0087cf;
-    font-size: 15px;
-    font-family: 'Consolas';
+    color: #F15025;
+    font-size: 18px;
+    font-family: 'Montserrat';
     font-weight: 400;
     line-height: 42px;
     float: left;
-    width: 84.58781362007168%;
-    height: 36px;
+    width: 85.2%;
+    height: 40px;
     border: none;
-    margin: 0 0.5376344086021505%;
+    margin: 0 0.2%;
     padding: 0;
 }
 
@@ -80,17 +107,17 @@ header {
 
 #converter form #button {
     color: #ffffff;
-    background-color: #0087cf;
-    font-size: 15px;
+    background-color: #F15025;
+    font-size: 18px;
     font-family: 'Montserrat';
     font-weight: 500;
     line-height: 36px;
     width: 13.79928315412186%;
-    height: 36px;
+    height: 34px;
     border: none;
     border-radius: 2px;
     margin: 3px 0.5376344086021505% 0 0;
-    padding: 0;
+    padding: 8px;
     cursor: pointer;
     -webkit-appearance: none;
 }
@@ -102,6 +129,7 @@ header {
 }
 
 
+
 article {
     display: block;
     background-color: yellow;
@@ -110,7 +138,6 @@ article {
 footer {
     position: fixed;
     left: 0px;
-    text-indent: 4em;
     bottom: 0px;
     width: 100%;
     background-color: #FFFFFF;
