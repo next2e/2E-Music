@@ -31,12 +31,12 @@ def delet():
 
 @app.route("/volup")
 def volup():
-    subprocess.call(['./volup.sh'])
+    subprocess.call(['./volup.sh'], shell=True)
     return ''
 
 @app.route("/voldown")
 def voldown():
-    subprocess.call(['./voldown.sh'])
+    subprocess.call(['./voldown.sh'], shell=True)
     return ''
 
 def addurl(url):
