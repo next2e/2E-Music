@@ -55,7 +55,10 @@ def nextsong():
     print(queue)
     def songproc():
         global current
-        current = subprocess.Popen(['vlc-wrapper', '-I', 'rc', queue.pop(0), '--play-and-exit'])
+        print("Opening VLC")
+        with open(os.devnull, 'wb') as useless_trash:
+            current = subprocess.Popen(['vlc-wrapper', '-I', 'rc', queue.pop(0), '--play-and-exit'],
+                        stdout=useless_trash, stderr=useless_trash)
         current.wait()
         current = None
         nextsong()
