@@ -31,12 +31,12 @@ def delet():
 
 @app.route("/volup")
 def volup():
-    subprocess.Popen(['amixer','-D','pulse','sset','Master','10%+'])
+    subprocess.call(['./volup.sh'])
     return ''
 
 @app.route("/voldown")
 def voldown():
-    subprocess.Popen(['amixer','-D','pulse','sset','Master','10%-'])
+    subprocess.call(['./voldown.sh'])
     return ''
 
 def addurl(url):
@@ -55,7 +55,7 @@ def nextsong():
     print(queue)
     def songproc():
         global current
-        current = subprocess.Popen(['vlc', queue.pop(0), '--play-and-exit'])
+        current = subprocess.Popen(['cvlc', queue.pop(0), '--play-and-exit'])
         current.wait()
         current = None
         nextsong()
