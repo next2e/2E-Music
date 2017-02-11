@@ -55,7 +55,7 @@ def nextsong():
     print(queue)
     def songproc():
         global current
-        current = subprocess.Popen(['cvlc', queue.pop(0), '--play-and-exit'])
+        current = subprocess.Popen(['vlc-wrapper', '-I', 'rc', queue.pop(0), '--play-and-exit'])
         current.wait()
         current = None
         nextsong()
@@ -67,4 +67,4 @@ def download(total, recvd, ratio, rate, eta):
     print(ratio)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=80, debug=True)
