@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
     <meta name="description" content="I'm sorry it's so bad">
     <meta name="author" content="Mostly cor, Joon was there too">
     <link rel="icon" href="../../static/img/favicon.jpg">
@@ -34,16 +34,10 @@
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top" id="custombar">
-        <div class="container">
-            <div class="navbar-header">
-                <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>-->
-                <a class="navbar-brand" id="custombar-brand"> 2GroovE the Website Website </a>
-            </div>
+        <div class="container" id="customcontainer">
+
+               2GroovE the Website Website
+
             <!--<div id="navbar" class="collapse navbar-collapse">-->
 
 
@@ -64,7 +58,7 @@
         </div>
         <form>
             <input id="input" type="text" name="video" autocomplete="off">
-            <input class="btn btn-default" id="button" value="Submit">
+            <button class="btn btn-default" id="button">Submit</button>
         </form>
             <button class="btn btn-danger" id="volup"><i class="glyphicon glyphicon-volume-up"></i> Louder </button>
             <button class="btn btn-info" id="voldown"><i class="glyphicon glyphicon-volume-down"></i> Unlouder</button>
@@ -74,8 +68,11 @@
 
     <div id="what_the_fuck_is_this_MEME_div_what_am_i_even_DOING_damn_how_does_jessica_do_this_shit" style="height: 25px"></div>
 
-    <div id="content" style="max-width:800px;margin: auto;font-size:18px;">
-      <div id="queue">
+    <div id="content" class="panel panel-default">
+      <div id="titular" class="panel-heading">
+        Current Queue
+      </div>
+      <div id="queue" class="panel-body">
 
       </div>
     </div>

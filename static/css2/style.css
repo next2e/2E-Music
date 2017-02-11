@@ -20,26 +20,31 @@ header {
   text-transform: uppercase;
 }
 
+#customcontainer{
+  color: #FFFFFF;
+  background-color: rgba(255, 0, 0, 0.0);
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  font-size: 30px;
+  height: 60px;
+  line-height: 60px;
+  position: absolute;
+}
+
 #custombar {
     background-color: #F15025;
-    font-family: 'Montserrat';
-    text-transform: uppercase;
     height: 60px;
 }
 
-#custombar-brand, #custombar-brand:hover {
-    color: #FFFFFF;
-    background-color: #F15025;
-    font-size: 30px;
-    padding: 19px 15px;
-}
+
 
 #converter {
     background-color: #f4f4f4;
-
+    border-color: #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     height: 200px;
     margin:auto;
-    border-radius: 2px;
     padding: 40px 30px 20px 30px;
     position: relative;
     z-index: 1;
@@ -63,8 +68,6 @@ header {
     }
 }
 
-/*w:560px;p:20px;*/
-
 #converter #title {
     font-size: 16px;
     font-family: 'Montserrat';
@@ -85,9 +88,6 @@ header {
     margin-bottom: 15px;
 }
 
-
-/*w:558px;*/
-
 #converter form #input {
     color: #F15025;
     font-size: 18px;
@@ -102,24 +102,35 @@ header {
     padding: 0;
 }
 
-
-/*w:472px;m:3px;*/
-
 #converter form #button {
+
+    position: relative;
+    top: 50%;
+    left:52px;
+    transform: translateY(-50%);
+    width: 100px;
     color: #ffffff;
     background-color: #F15025;
-    font-size: 18px;
-    font-family: 'Montserrat';
-    font-weight: 500;
-    line-height: 36px;
-    width: 13.79928315412186%;
-    height: 34px;
-    border: none;
-    border-radius: 2px;
-    margin: 3px 0.5376344086021505% 0 0;
-    padding: 8px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
     cursor: pointer;
-    -webkit-appearance: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+}
+#converter form #button:hover{
+  background-color: #E14319;
 }
 
 
@@ -128,7 +139,31 @@ header {
     display: none;
 }
 
+#content{
 
+  margin: auto;
+  font-size:18px;
+  font-family: 'Montserrat';
+
+}
+
+@media (min-width:768px) {
+    #content {
+        width: 720px
+    }
+}
+
+@media (min-width:992px) {
+    #content {
+        width: 940px
+    }
+}
+
+@media (min-width:1200px) {
+    #content {
+        width: 1140px
+    }
+}
 
 article {
     display: block;
