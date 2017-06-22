@@ -1,0 +1,130 @@
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: 'Oswald', sans-serif;
+}
+header{
+  background-color: #F15025;
+  color: #FFFFFF;
+  font-size: 20px;
+  width: 100%;
+}
+footer{
+  background-color: #F15025;
+  color: #D3D3D3;
+  font-size: 15px;
+  width:100%;
+  position: relative;
+  margin-top: -35px;
+  height: 35px;
+  clear: both;
+}
+a{
+  color: #D3D3D3;
+  text-decoration: underline;
+}
+#wrapper{
+  min-height: 100%;
+}
+#main{
+  overflow: auto;
+  padding-bottom: 35px;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 0px;
+}
+.linkDiv{
+  font-size: 20px;
+  margin: 20px auto;
+  border: 2px solid #808080;
+  border-radius: 10px;
+  width: 60%;
+  min-width: 550px;
+  padding: 40px;
+}
+.linkP{
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.linkForm{
+  margin-bottom: 0px;
+}
+#linkButton{
+  color: #000000;
+  float: right;
+  height: 36px;
+  width: 15%;
+  background-color: rgba(241,80,37,.5);
+  border: none;
+  border-radius: 5px;
+}
+.linkInput{
+  color: #000000;
+  width: 84%;
+}
+.component{
+  font-size: 20px;
+  margin: 20px auto;
+  border: 2px solid #808080;
+  border-radius: 10px;
+  width: 60%;
+  min-width: 550px;
+  padding: 5px 40px;
+}
+.title{
+  margin: 0px 0px 5px 0px;
+  border-bottom: 2px solid #808080;
+}
+.skipDiv{
+  float:right;
+  margin-top: 4px;
+}
+.volumeDiv{
+  padding-top: 2px;
+  border-top: 2px solid #808080;
+}
+#volup,#voldown,#skipButton{
+  color: #000000;
+  background-color: rgba(241,80,37,.5);
+  border: none;
+  border-radius: 5px;
+  padding: 3px 6px;
+}
+.noMargin{
+  margin:0;
+}
+.plugDiv{
+  float:right;
+}
+
+@media all and (max-width: 580px) {
+  footer{
+    font-size: 8px;
+    margin-top: -28px;
+    height: 28px;
+    clear: both;
+  }
+  .linkDiv{
+    font-size: 15px;
+    padding: 15px;
+    width: 90%;
+    min-width: 300px;
+  }
+  #linkButton{
+    height: 28px;
+    width: 20%;
+  }
+  .linkInput{
+    width: 79%;
+  }
+  .component{
+    font-size: 15px;
+    padding: 5px 15px;
+    width: 90%;
+    min-width: 300px;
+  }
+}
