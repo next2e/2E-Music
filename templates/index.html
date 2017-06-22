@@ -1,97 +1,85 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <meta name="description" content="I'm sorry it's so bad">
-    <meta name="author" content="Mostly cor, Joon was there too">
-    <link rel="icon" href="../../static/img/favicon.jpg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Music memes for 2E media-minded teens">
+  <meta name="author" content="Mostly cor, Joon was there too">
+  <link rel="icon" href="../static/img/favicon.jpg">
+  <title>2E Music Memes</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-    <title>2E Music Memes</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../static/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="../../static/bootstrap/css/sticky-footer-navbar.css" rel="stylesheet">
-
-    <!-- My meme css -->
-    <link href="../../static/css2/style.css" rel="stylesheet">
-
-    <script src="../../static/js/main.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/css/style.css" rel="stylesheet">
+  <link href="../static/css/effects.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <!-- <script src="../static/js/main.js"></script> -->
 </head>
 
 <body>
-
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top" id="custombar">
-        <div class="container" id="customcontainer">
-
-               2GroovE the Website Website
-
-            <!--<div id="navbar" class="collapse navbar-collapse">-->
-
-
-        </div>
-    </nav>
-
-    <!-- Begin page content -->
-    <div class="container">
-        <div id="customheader" class="page-header" style=font-family:'Montserrat'>
-            <h1>Welcome</h1>
-        </div>
-
-
-    </div>
-    <div id="converter">
-        <div id="title">
-            Input your video here (Youtube or similar):
-        </div>
-        <form>
-            <input id="input" type="text" name="video" autocomplete="off">
-            <button class="btn btn-default" id="button">Submit</button>
-        </form>
-            <button class="btn btn-danger" id="volup"><i class="glyphicon glyphicon-volume-up"></i> Louder </button>
-            <button class="btn btn-info" id="voldown"><i class="glyphicon glyphicon-volume-down"></i> Unlouder</button>
-            <button class="btn btn-warning" id="delet"><i class="glyphicon glyphicon-forward"></i> Skip</button>
-
-    </div>
-
-    <div id="what_the_fuck_is_this_MEME_div_what_am_i_even_DOING_damn_how_does_jessica_do_this_shit" style="height: 25px"></div>
-
-    <div id="content" class="panel panel-default">
-      <div id="titular" class="panel-heading">
-        Current Queue
-      </div>
-      <div id="queue" class="panel-body">
-
-      </div>
-    </div>
-
-    <footer class="footer">
+  <div id="wrapper">
+    <div id="main">
+      <header>
         <div class="container">
-            <p class="text-muted">2GroovE the website; Made by some 2E residents one time they were bored.</p>
+          2GroovE
+          <i class="glyphicon glyphicon-music"></i>
         </div>
-    </footer>
+      </header>
 
+      <div class="linkDiv">
+        <p class="linkP"> Use this form to queue new music: </p>
+        <form class="linkForm">
+          <button id="linkButton" class="hvr-shutter-out-horizontal" type="button">Queue</button>
+          <input class="linkInput" type="text" autocomplete="off" autofocus placeholder="Insert Youtube url here"></input>
+          <!-- or
+        <button class="linkButton" type="button">Random</button>
+          The above would be a later feature that could be cool -->
+        </form>
+      </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../static/bootstrap/js/bootstrap.min.js"></script> -->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+      <div class="component">
+        <p class="title"> Currently playing </p>
+        <div>
+          <p>No song currently playing </p>
+          <!-- ?? or something like <p>We are number one - LazyTown Memes</p> -->
+        </div>
+        <div class="skipDiv">
+          <button id="skipButton" class="hvr-shutter-out-horizontal"><span class="glyphicon glyphicon-forward"></span>Skip song</button>
+        </div>
+        <div class="volumeDiv">
+          <p class="noMargin">
+            Volume:
+            <button id="voldown" class="hvr-bounce-to-left"><span class="glyphicon glyphicon-volume-down"></span></button>
+            <span id="vol"> eman </span>
+            <button id="volup" class="hvr-bounce-to-right"><span class="glyphicon glyphicon-volume-up"></span></button>
+          </p>
+        </div>
+      </div>
+
+      <div class="component">
+        <p class="title"> Current queue </p>
+        <ul class="noMargin">
+          <!-- Example queue <li> <span> Song title here </span> | <button id="delete">Delete</button> | <Button id="down"><span class="glyphicon glyphicon-arrow-down"></span>Down</button> </li>
+                             <li> <span> Song title2 here </span> | <button id="delete">Delete</button> | <Button id="up"><span class="glyphicon glyphicon-arrow-up"></span>Up</button> </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="plugDiv">
+        <a href="https://next2e.github.io/">
+              <span class="glyphicon glyphicon-globe"></span>
+              2E Website
+            </a>
+      </div>
+      <div class="creditDiv">
+        2GroovE the website; Made by 2E residents one time they were bored.
+      </div>
+    </div>
+  </footer>
+
 </body>
 
 </html>
