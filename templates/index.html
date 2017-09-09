@@ -13,7 +13,7 @@
   <link href="../static/css/style.css" rel="stylesheet">
   <link href="../static/css/effects.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <!-- <script src="../static/js/main.js"></script> -->
+  <script src="../static/js/main.js"></script>
 </head>
 
 <body>
@@ -30,9 +30,9 @@
         <p class="linkP"> Use this form to queue new music: </p>
         <form class="linkForm">
           <button id="linkButton" class="hvr-shutter-out-horizontal" type="button">Queue</button>
-          <input class="linkInput" type="text" autocomplete="off" autofocus placeholder="Insert Youtube url here"></input>
+          <input id="url" class="linkInput" type="text" autocomplete="off" autofocus placeholder="Insert Youtube url here"></input>
           <!-- or
-        <button class="linkButton" type="button">Random</button>
+        <button type="button">Random</button>
           The above would be a later feature that could be cool -->
         </form>
       </div>
@@ -58,9 +58,11 @@
 
       <div class="component">
         <p class="title"> Current queue </p>
-        <ul class="noMargin">
+        <ul id="queue" class="noMargin">
+          <!--
           <li> <span> Example1 </span> | <button id="delete" class="hvr-shutter-out-horizontal">Delete</button> | <Button id="down" class="hvr-bounce-to-bottom"><span class="glyphicon glyphicon-arrow-down"></span>Down</button> </li>
           <li> <span> Example2 </span> | <button id="delete" class="hvr-shutter-out-horizontal">Delete</button> | <Button id="up" class="hvr-bounce-to-top"><span class="glyphicon glyphicon-arrow-up"></span>Up</button> </li>
+          -->
         </ul>
       </div>
     </div>

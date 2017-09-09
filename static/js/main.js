@@ -1,6 +1,7 @@
 $(function() {
-  $("#button").on("click", function(e) {
-    $.post("/submit", {"video": $("#input").val()});
+  $("#linkButton").on("click", function(e) {
+    $.post("/submit", {"video": $("#url").val()});
+    alert("Submitted! The song play/appear in the queue once it is loaded.");
   });
   $("#volup").on("click", function(e) {
     $.get("/volup");
@@ -8,15 +9,15 @@ $(function() {
   $("#voldown").on("click", function(e) {
     $.get("/voldown");
   });
-  $("#delet").on("click", function(e) {
-    $.get("/delet");
+  $("#skipButton").on("click", function(e) {
+    $.get("/skip");
   });
 
   setInterval(function() {
     $.getJSON("/queue", function(q) {
       things = '';
       for(var a=0; a<q.length; a++) {
-        things += '<p>'+q[a]+'</p>'
+        things += '<li><span>'+q[a]+'</span></li>'
       }
       $("#queue").html(things);
     });

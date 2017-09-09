@@ -20,9 +20,9 @@ def submit():
     url = request.form['video']
     t = threading.Thread(target=addurl, args=(url,))
     t.start()
-    return 'Submitted!'
+    return 'ok'
 
-@app.route("/delet")
+@app.route("/skip")
 def delet():
     global current
     current.kill()
@@ -48,7 +48,7 @@ def addurl(url):
 
 @app.route("/queue")
 def getqueue():
-    print(queue)
+    output = [a.split('.')[:-1].join()[5:] for a in queue]
     return jsonify(queue)
 
 def nextsong():
