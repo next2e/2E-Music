@@ -104,6 +104,9 @@ li{
 .plugDiv{
   float:right;
 }
+.linkInput,  x:-moz-any-link, x:default{
+  height: 36px;
+}
 
 @media all and (max-width: 580px) {
   footer{
@@ -130,5 +133,8 @@ li{
     padding: 5px 15px;
     width: 90%;
     min-width: 300px;
+  }
+  .linkInput,  x:-moz-any-link, x:default{
+    height: 36px;
   }
 }
