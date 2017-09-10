@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 current = None
 queue = []
+now = 'files/Nothing currently playing.mp3'
 
 @app.route("/")
 def index():
@@ -48,18 +49,22 @@ def addurl(url):
 
 @app.route("/queue")
 def getqueue():
-    output = [''.join(a.split('.')[:-1])[6:] for a in queue]
+    global now
+    output = [now] + queue
+    output = [''.join(a.split('.')[:-1])[6:] for a in output]
     return jsonify(output)
 
 def nextsong():
-    print(queue)
     def songproc():
         global current
+        global now
         print("Opening VLC")
+        now = queue.pop(0)
         with open(os.devnull, 'wb') as useless_trash:
-            current = subprocess.Popen(['vlc-wrapper', '-I', 'rc', queue.pop(0), '--play-and-exit'],
+            current = subprocess.Popen(['vlc-wrapper', '-I', 'rc', now, '--play-and-exit'],
                         stdout=useless_trash, stderr=useless_trash)
         current.wait()
+        now = 'files/Nothing currently playing.mp3'
         current = None
         nextsong()
 

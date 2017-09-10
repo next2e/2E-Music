@@ -15,11 +15,13 @@ $(function() {
 
   setInterval(function() {
     $.getJSON("/queue", function(q) {
-      things = '';
-      for(var a=0; a<q.length; a++) {
-        things += '<li><span>'+q[a]+'</span></li>'
-      }
-      $("#queue").html(things);
+        things = '';
+        $("#playing").html('<p>'+q[0]+'</p>');
+
+        for(var a=1; a<q.length; a++) {
+            things += '<li><span>'+q[a]+'</span></li>'
+        }
+        $("#queue").html(things);
     });
   }, 1000);
 });
