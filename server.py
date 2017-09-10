@@ -51,7 +51,7 @@ def addurl(url):
 def getqueue():
     global now
     output = [now] + queue
-    output = [''.join(a.split('.')[:-1])[6:] for a in output]
+    output = ['.'.join(a.split('.')[:-1])[6:] for a in output]
     return jsonify(output)
 
 def nextsong():
