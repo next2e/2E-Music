@@ -1,10 +1,12 @@
-$(function() {
-  $("#linkButton").on("click", function(e) {
+function submit_video(e) {
     $.post("/submit", {"video": $("#url").val()});
     $("#url").val("");
     $("#linkButton").blur();
     alert("Submitted! The song play/appear in the queue once it is loaded.");
-  });
+};
+
+$(function() {
+  $("#linkButton").on("click", submit_video);
   $("#volup").on("click", function(e) {
     $("#volup").blur();
     $.get("/volup");
@@ -19,7 +21,7 @@ $(function() {
   });
   $('#url').keypress(function(e) {
     if (e.keyCode == 13) {
-      $('#linkButton').click();
+      submit_video();
       e.preventDefault();
     }
   });
