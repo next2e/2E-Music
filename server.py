@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from gevent.wsgi import WSGIServer
 from requests import get
 from random import choice
+import sys
 import json
 import pafy
 import subprocess
@@ -84,6 +85,9 @@ def download(total, recvd, ratio, rate, eta):
     print(ratio)
 
 if __name__ == "__main__":
-    http_server = WSGIServer(('', 5000), app)
-    # http_server = WSGIServer(('0.0.0.0', 80), app)
+    if len(sys.argv) > 1 and sys.argv[1] == 'production':
+        http_server = WSGIServer(('0.0.0.0', 80), app)
+    else:
+        http_server = WSGIServer(('', 5000), app)
+
     http_server.serve_forever()
