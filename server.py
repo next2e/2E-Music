@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from gevent.wsgi import WSGIServer
 from requests import get
 from random import choice
 import json
@@ -83,5 +84,6 @@ def download(total, recvd, ratio, rate, eta):
     print(ratio)
 
 if __name__ == "__main__":
-    #app.run(host="0.0.0.0", port=80, debug=True)
-    app.run(debug=True)
+    http_server = WSGIServer(('', 5000), app)
+    # http_server = WSGIServer(('0.0.0.0', 80), app)
+    http_server.serve_forever()
