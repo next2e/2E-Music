@@ -66,6 +66,9 @@ li{
   border: none;
   border-radius: 5px;
 }
+#linkButton:focus{
+  outline: none;
+}
 .linkInput{
   color: #000000;
   width: 84%;
@@ -97,6 +100,24 @@ li{
   border: none;
   border-radius: 5px;
   padding: 3px 6px;
+}
+#volup:focus{
+  outline: none;
+}
+#voldown:focus{
+  outline: none;
+}
+#skipButton:focus{
+  outline: none;
+}
+#delete:focus{
+  outline: none;
+}
+#up:focus{
+  outline: none;
+}
+#down:focus{
+  outline: none;
 }
 .noMargin{
   margin:0;
