@@ -48,8 +48,8 @@ def addurl(url):
 
 @app.route("/queue")
 def getqueue():
-    output = [''.join(a.split('.')[:-1])[5:] for a in queue]
-    return jsonify(queue)
+    output = [''.join(a.split('.')[:-1])[6:] for a in queue]
+    return jsonify(output)
 
 def nextsong():
     print(queue)
