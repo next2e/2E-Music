@@ -7,6 +7,9 @@ function submit_video(e) {
 
 $(function() {
   $("#linkButton").on("click", submit_video);
+  $("#random").on("click", function(e) {
+    $.get("/random");
+  });
   $("#volup").on("click", function(e) {
     $("#volup").blur();
     $.get("/volup");

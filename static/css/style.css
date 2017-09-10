@@ -22,7 +22,7 @@ footer{
   height: 35px;
   clear: both;
 }
-a{
+.plugDiv a{
   color: #D3D3D3;
   text-decoration: underline;
 }

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from requests import get
+from random import choice
 import json
 import pafy
 import subprocess
@@ -38,6 +39,13 @@ def volup():
 @app.route("/voldown")
 def voldown():
     subprocess.call(['./voldown.sh'], shell=True)
+    return ''
+
+@app.route('/random')
+def random():
+    queue.append('files/'+choice(os.listdir('files')))
+    if not current:
+        nextsong()
     return ''
 
 def addurl(url):
