@@ -54,14 +54,24 @@ li{
   margin-top: 0px;
   margin-bottom: 5px;
 }
+.linkContainer {
+  display: flex;
+}
 .linkForm{
   margin-bottom: 0px;
+  flex: 10;
+  display: flex;
+}
+.linkInput {
+  vertical-align: middle;
+  flex: 8;
 }
 #linkButton{
   color: #000000;
-  float: right;
+  vertical-align: middle;
+  flex: 2;
   height: 36px;
-  width: 15%;
+  margin: 0 5px 0 5px;
   background-color: rgba(241,80,37,.5);
   border: none;
   border-radius: 5px;
@@ -69,9 +79,16 @@ li{
 #linkButton:focus{
   outline: none;
 }
-.linkInput{
+#random {
   color: #000000;
-  width: 84%;
+  flex: 2;
+  height: 36px;
+  background-color: rgba(241,80,37,.5);
+  border: none;
+  border-radius: 5px;
+}
+#random:focus {
+  outline: none;
 }
 .component{
   font-size: 20px;
@@ -146,8 +163,8 @@ li{
     height: 28px;
     width: 20%;
   }
-  .linkInput{
-    width: 79%;
+  #random {
+    height: 28px;
   }
   .component{
     font-size: 15px;

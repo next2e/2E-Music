@@ -27,21 +27,20 @@
       </header>
 
       <div class="linkDiv">
-        <p class="linkP"> Queue new music or play a <a href="#" id="random">random song</a>: </p>
-        <form class="linkForm">
-          <button id="linkButton" class="hvr-shutter-out-horizontal" type="button">Queue</button>
-          <input id="url" class="linkInput" type="text" autocomplete="off" autofocus placeholder="Insert Youtube url here"></input>
-          <!-- or
-        <button type="button">Random</button>
-          The above would be a later feature that could be cool -->
-        </form>
+        <p class="linkP"> Queue music - enter a link or go random! </p>
+        <div class="linkContainer">
+          <form class="linkForm">
+            <input id="url" class="linkInput" type="text" autocomplete="off" autofocus placeholder="Insert Youtube url here"></input>
+            <button id="linkButton" class="hvr-shutter-out-horizontal" type="button">Link</button>
+          </form>
+          <button id="random" class="hvr-shutter-out-horizontal" type="button">Random</button>
+        </div>
       </div>
 
       <div class="component">
         <p class="title"> Currently playing </p>
         <div id="playing">
             <p>Loading...</p>
-          <!-- ?? or something like <p>We are number one - LazyTown Memes</p> -->
         </div>
         <div class="skipDiv">
           <button id="skipButton" class="hvr-shutter-out-horizontal"><span class="glyphicon glyphicon-forward"></span>Skip song</button>
