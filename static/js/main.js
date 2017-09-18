@@ -7,7 +7,6 @@ function submit_video(e) {
 
 function delete_song(song_number) {
     $.post("/delete", {"song": song_number})
-    alert("Deleted! The song will disappear once the queue is reloaded.")
 }
 
 $(function() {
