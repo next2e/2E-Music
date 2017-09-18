@@ -127,10 +127,10 @@ li{
   float: right;
 }
 #quietButton span {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 .delete {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 #volup:focus{
   outline: none;
@@ -144,7 +144,7 @@ li{
 #quietButton:focus{
   outline: none;
 }
-#delete:focus{
+.delete:focus{
   outline: none;
 }
 #up:focus{
