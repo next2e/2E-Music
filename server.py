@@ -38,6 +38,7 @@ def delete():
     song = request.form['song']
     delet = next(s for s in queue if song in s) #first instance
     queue.remove(delet)
+    return ''
 
 @app.route("/volup")
 def volup():
