@@ -5,8 +5,8 @@ function submit_video(e) {
     alert("Submitted! The song play/appear in the queue once it is loaded.");
 };
 
-function delete_song(song_name) {
-    $.post("/delete", {"song": song_name})
+function delete_song(song_number) {
+    $.post("/delete", {"song": song_number})
     alert("Deleted! The song will disappear once the queue is reloaded.")
 }
 
@@ -42,7 +42,7 @@ $(function() {
 
         for(var a=1; a<q.length; a++) {
             things += '<li><span>'
-            things += '<button onclick="delete_song(\"' + q[a].replace(/"/g, "'") + '\")" class="delete hvr-shutter-out-horizontal"> Delete </button>'
+            things += '<button onclick="delete_song(' + a + ')" class="delete hvr-shutter-out-horizontal"> Delete </button>'
             things += q[a] + '</span></li>'
         }
         $("#queue").html(things);
