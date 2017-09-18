@@ -5,6 +5,11 @@ function submit_video(e) {
     alert("Submitted! The song play/appear in the queue once it is loaded.");
 };
 
+function delete_song(song_name) {
+    $.post("/delete", {"song": song_name})
+    alert("Deleted! The song will disappear once the queue is reloaded.")
+}
+
 $(function() {
   $("#linkButton").on("click", submit_video);
   $("#random").on("click", function(e) {
@@ -37,6 +42,7 @@ $(function() {
 
         for(var a=1; a<q.length; a++) {
             things += '<li><span>'+q[a]+'</span></li>'
+            things += '<button onclick="delete_song(\'' + q[a] + '\')" class="hvr-shutter-out-horizontal"> Delete </button>'
         }
         $("#queue").html(things);
     });
