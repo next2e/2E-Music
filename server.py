@@ -26,6 +26,15 @@ def submit():
     t.start()
     return 'ok'
 
+@app.route("/quiet")
+def quiet():
+    queue.insert(0, 'files_Be quiet!.mp3')
+    if current:
+        skip()
+    else:
+        nextsong()
+    return ''
+
 @app.route("/skip")
 def skip():
     global current

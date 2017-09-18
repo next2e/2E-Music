@@ -118,6 +118,17 @@ li{
   border-radius: 5px;
   padding: 3px 6px;
 }
+#quietButton {
+  color: #000000;
+  background-color: rgb(239, 224, 224);
+  border: none;
+  border-radius: 5px;
+  padding: 3px 6px;
+  float: right;
+}
+#quietButton span {
+    margin-right: 5px;
+}
 .delete {
     margin-right: 15px;
 }
@@ -128,6 +139,9 @@ li{
   outline: none;
 }
 #skipButton:focus{
+  outline: none;
+}
+#quietButton:focus{
   outline: none;
 }
 #delete:focus{

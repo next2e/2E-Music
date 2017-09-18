@@ -11,6 +11,9 @@ function delete_song(song_number) {
 
 $(function() {
   $("#linkButton").on("click", submit_video);
+  $("#quietButton").on("click", function(e) {
+    $.get("/quiet");
+  });
   $("#random").on("click", function(e) {
     $("#random").blur();
     $.get("/random");
