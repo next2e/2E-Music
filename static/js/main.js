@@ -41,8 +41,9 @@ $(function() {
         $("#playing").html('<p>'+q[0]+'</p>');
 
         for(var a=1; a<q.length; a++) {
-            things += '<li><span>'+q[a]+'</span></li>'
+            things += '<li><span>'
             things += '<button onclick="delete_song(\'' + q[a] + '\')" class="delete hvr-shutter-out-horizontal"> Delete </button>'
+            things += q[a] + '</span></li>'
         }
         $("#queue").html(things);
     });
