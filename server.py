@@ -27,11 +27,17 @@ def submit():
     return 'ok'
 
 @app.route("/skip")
-def delet():
+def skip():
     global current
     current.kill()
     current = None
     return ''
+
+@app.route("/delete", methods=['POST'])
+def delete():
+    song = request.form['song']
+    delet = next(s for s in queue if song in s) #first instance
+    queue.remove(delet)
 
 @app.route("/volup")
 def volup():
