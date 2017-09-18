@@ -42,7 +42,7 @@ $(function() {
 
         for(var a=1; a<q.length; a++) {
             things += '<li><span>'+q[a]+'</span></li>'
-            things += '<button onclick="delete_song(\'' + q[a] + '\')" class="delete hvr-shutter-out-horizontal"> Delete </button>'
+            things += '<button onclick="delete_song(\"' + q[a].replace(/"/g, "'") + '\")" class="delete hvr-shutter-out-horizontal"> Delete </button>'
         }
         $("#queue").html(things);
     });
