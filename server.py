@@ -35,11 +35,8 @@ def skip():
 
 @app.route("/delete", methods=['POST'])
 def delete():
-    song = request.form['song']
-    for s in queue:
-        if song in s:
-            queue.remove(s)
-            break
+    song = int(request.form['song']) - 1
+    queue.pop(song)
     return ''
 
 @app.route("/volup")
