@@ -111,12 +111,15 @@ li{
   padding-top: 2px;
   border-top: 2px solid #808080;
 }
-#volup,#voldown,#skipButton,#delete,#up,#down{
+#volup,#voldown,#skipButton,.delete,#up,#down{
   color: #000000;
-  background-color: rgba(241,80,37,.5);
+  background-color: rgba(241,80,37,.5)!important;
   border: none;
   border-radius: 5px;
   padding: 3px 6px;
+}
+.delete {
+    margin-right: 15px;
 }
 #volup:focus{
   outline: none;
