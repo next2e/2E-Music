@@ -45,7 +45,7 @@ $(function() {
 
         for(var a=1; a<q.length; a++) {
             things += '<li><span>'
-            things += '<button onclick="delete_song(' + a + ')" class="delete hvr-shutter-out-horizontal"> Delete </button>'
+            things += '<button onclick="delete_song(' + a + ')" class="delete"> Delete </button>'
             things += q[a] + '</span></li>'
         }
         $("#queue").html(things);
