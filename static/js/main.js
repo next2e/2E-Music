@@ -32,6 +32,7 @@ function display_results(songs) {
 }
 
 $(function() {
+  $.getJSON("/shuffle", display_results);
   $("#add-song").on("click", submit_video);
   $("#submit-search").on("click", submit_search);
   $("#quietButton").on("click", function(e) {
@@ -57,6 +58,16 @@ $(function() {
   $("#shuffle").on("click", function(e) {
     $("#shuffle").blur();
     $.getJSON("/shuffle", display_results);
+  });
+  $("#toggle-search").on("click", function(e) {
+      if ($('#search-container:visible').length) {
+          $('#search-container').hide("slow");
+      } else {
+          $('#search-container').show("slow");
+      }
+      $("#search-arrow").toggleClass("glyphicon-chevron-up");
+      $("#search-arrow").toggleClass("glyphicon-chevron-down");
+      $("#toggle-search").blur();
   });
   $('#url').keypress(function(e) {
     if (e.keyCode == 13) {
