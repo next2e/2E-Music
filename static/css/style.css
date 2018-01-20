@@ -74,20 +74,20 @@ li{
   vertical-align: middle;
   flex: 8;
 }
-#linkButton{
+.linkButton{
   color: #000000;
   vertical-align: middle;
   flex: 2;
   height: 36px;
   margin: 0 5px 0 5px;
-  background-color: rgba(241,80,37,.5);
+  background-color: rgba(241,80,37,.5)!important;
   border: none;
   border-radius: 5px;
 }
-#linkButton:focus{
+.linkButton:focus{
   outline: none;
 }
-#random {
+#random,#shuffle{
   color: #000000;
   flex: 2;
   height: 36px;
@@ -95,7 +95,7 @@ li{
   border: none;
   border-radius: 5px;
 }
-#random:focus {
+#random:focus,#shuffle:focus {
   outline: none;
 }
 .component{
@@ -119,7 +119,11 @@ li{
   padding-top: 2px;
   border-top: 2px solid #808080;
 }
-#volup,#voldown,#skipButton,.delete,#up,#down{
+#search-results {
+    padding-top: 8px;
+    margin: 0;
+}
+#volup,#voldown,#skipButton,.delete,#up,#down,.select-song{
   color: #000000;
   background-color: rgba(241,80,37,.5)!important;
   border: none;
@@ -136,7 +140,7 @@ li{
 #quietButton span {
   margin-right: 5px;
 }
-.delete {
+.delete,.select-song {
   margin-right: 15px;
 }
 #volup:focus{
@@ -151,7 +155,7 @@ li{
 #quietButton:focus{
   outline: none;
 }
-.delete:focus{
+.delete:focus, .select-song:focus{
   outline: none;
 }
 #up:focus{
@@ -180,11 +184,11 @@ li{
     width: 90%;
     min-width: 300px;
   }
-  #linkButton{
+  .linkButton{
     height: 28px;
     width: 20%;
   }
-  #random {
+  #random,#shuffle {
     height: 28px;
   }
   .component{

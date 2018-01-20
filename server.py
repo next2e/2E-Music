@@ -48,6 +48,21 @@ def delete():
     queue.pop(song)
     return ''
 
+@app.route("/playsong", methods=['POST'])
+def play_song():
+    song = request.form['song']
+    queue.append('files/' + song);
+    if not current:
+        nextsong()
+    return ''
+
+@app.route("/search")
+def search():
+    q = request.args.get('query')
+    all_songs = os.listdir('files')
+    results = [s for s in all_songs if q.lower() in s.lower()]
+    return jsonify(results[:50])
+
 @app.route("/volup")
 def volup():
     subprocess.call(['./volup.sh'], shell=True)
@@ -64,6 +79,19 @@ def random():
     if not current:
         nextsong()
     return ''
+
+@app.route('/shuffle')
+def shuffle():
+    songs = []
+    all_songs = os.listdir('files')
+    if len(all_songs) <= 20:
+        return jsonify(all_songs)
+
+    while len(songs) < 20:
+        s = choice(os.listdir('files'))
+        if s not in songs:
+            songs.append(s)
+    return jsonify(list(songs))
 
 def addurl(url):
     video = pafy.new(url)

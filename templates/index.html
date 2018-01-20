@@ -34,11 +34,24 @@
         <div class="linkContainer">
           <form class="linkForm">
             <input id="url" class="linkInput" type="text" autocomplete="off" autofocus placeholder="Insert Youtube url here"></input>
-            <button id="linkButton" class="hvr-shutter-out-horizontal" type="button">Add</button>
+            <button class="linkButton hvr-shutter-out-horizontal" id="add-song" type="button">Add</button>
           </form>
           <button id="random" class="hvr-shutter-out-horizontal" type="button">Random</button>
         </div>
       </div>
+
+    <div class="component" style="padding-top: 20px; padding-bottom: 20px;">
+        <p class="linkP"> Search past songs </p>
+        <div class="linkContainer">
+            <form class="linkForm">
+                <input id="query" class="linkInput" type="text" autocomplete="off" autofocus placeholder="Search"></input>
+                <button id="submit-search" class="linkButton hvr-shutter-out-horizontal" type="button">Search</button>
+            </form>
+            <button id="shuffle" class="hvr-shutter-out-horizontal" type="button">Shuffle</button>
+        </div>
+        <ul id="search-results">
+        </ul>
+    </div>
 
       <div class="component">
         <p class="title"> Currently playing </p>
@@ -60,11 +73,7 @@
 
       <div class="component">
         <p class="title"> Current queue </p>
-        <ul id="queue" class="noMargin">
-          <!--
-          <li> <span> Example1 </span> | <button id="delete" class="hvr-shutter-out-horizontal">Delete</button> | <Button id="down" class="hvr-bounce-to-bottom"><span class="glyphicon glyphicon-arrow-down"></span>Down</button> </li>
-          <li> <span> Example2 </span> | <button id="delete" class="hvr-shutter-out-horizontal">Delete</button> | <Button id="up" class="hvr-bounce-to-top"><span class="glyphicon glyphicon-arrow-up"></span>Up</button> </li>
-          -->
+        <ul id="queue" class="nomargin">
         </ul>
       </div>
     </div>

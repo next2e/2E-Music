@@ -3,14 +3,37 @@ function submit_video(e) {
     $("#url").val("");
     $("#linkButton").blur();
     alert("Submitted! The song play/appear in the queue once it is loaded.");
-};
+}
+
+function submit_search() {
+    var query = $("#query").val();
+    if (query.length > 1) {
+        $.getJSON("/search", {"query": query}, display_results);
+    }
+}
 
 function delete_song(song_number) {
     $.post("/delete", {"song": song_number})
 }
 
+function select_song(song) {
+    $.post("/playsong", {"song": song});
+}
+
+function display_results(songs) {
+    var listing = ''
+    songs.forEach(function(song) {
+        listing += '<li></span><button onclick="select_song(\'' + song + '\')" ';
+        listing += 'class="select-song">Add</button> ';
+        listing += song.substring(0, song.lastIndexOf('.'));
+        listing += '</span></li>';
+    })
+    $("#search-results").html(listing);
+}
+
 $(function() {
-  $("#linkButton").on("click", submit_video);
+  $("#add-song").on("click", submit_video);
+  $("#submit-search").on("click", submit_search);
   $("#quietButton").on("click", function(e) {
     $("#quietButton").blur();
     $.get("/quiet");
@@ -31,9 +54,19 @@ $(function() {
     $("#skipButton").blur();
     $.get("/skip");
   });
+  $("#shuffle").on("click", function(e) {
+    $("#shuffle").blur();
+    $.getJSON("/shuffle", display_results);
+  });
   $('#url').keypress(function(e) {
     if (e.keyCode == 13) {
       submit_video();
+      e.preventDefault();
+    }
+  });
+  $('#query').keypress(function(e) {
+    if (e.keyCode == 13) {
+        submit_search();
       e.preventDefault();
     }
   });
