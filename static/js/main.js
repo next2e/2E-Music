@@ -7,8 +7,10 @@ function submit_video(e) {
 
 function submit_search() {
     var query = $("#query").val();
-    if (query.length > 1) {
+    if (query.length) {
         $.getJSON("/search", {"query": query}, display_results);
+    } else {
+      $.getJSON("/shuffle", display_results);
     }
 }
 
