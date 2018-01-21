@@ -1,8 +1,16 @@
+function show_msg(text) {
+    Snackbar.show({
+        text: text,
+        showAction: false,
+        duration: 3000
+    });
+}
+
 function submit_video(e) {
     $.post("/submit", {"video": $("#url").val()});
     $("#url").val("");
     $("#linkButton").blur();
-    alert("Submitted! The song play/appear in the queue once it is loaded.");
+    show_msg("Submitted! Now downloading song...");
 }
 
 function submit_search() {
@@ -19,6 +27,8 @@ function delete_song(song_number) {
 }
 
 function select_song(song) {
+    var title = song.substring(0, song.lastIndexOf('.'));
+    show_msg("Adding " + title);
     $.post("/playsong", {"song": song});
 }
 
@@ -43,6 +53,7 @@ $(function() {
   });
   $("#random").on("click", function(e) {
     $("#random").blur();
+    show_msg("Adding a random song")
     $.get("/random");
   });
   $("#volup").on("click", function(e) {
