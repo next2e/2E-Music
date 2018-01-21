@@ -6,6 +6,15 @@ function show_msg(text) {
     });
 }
 
+// Sanitize punctuation
+function encode_str(s) {
+    return s.replace(/'/g, '%27').replace(/"/g, '%22');
+}
+
+function decode_str(s) {
+    return s.replace(/%27/g, "'").replace(/%22/g, '"');
+}
+
 function submit_video(e) {
     $.post("/submit", {"video": $("#url").val()});
     $("#url").val("");
@@ -27,6 +36,7 @@ function delete_song(song_number) {
 }
 
 function select_song(song) {
+    song = decode_str(song);
     var title = song.substring(0, song.lastIndexOf('.'));
     show_msg("Adding " + title);
     $.post("/playsong", {"song": song});
@@ -35,7 +45,7 @@ function select_song(song) {
 function display_results(songs) {
     var listing = ''
     songs.forEach(function(song) {
-        listing += '<li></span><button onclick="select_song(\'' + song + '\')" ';
+        listing += '<li></span><button onclick="select_song(\'' + encode_str(song) + '\')" ';
         listing += 'class="select-song">Add</button> ';
         listing += song.substring(0, song.lastIndexOf('.'));
         listing += '</span></li>';
