@@ -119,6 +119,9 @@ li{
   padding-top: 2px;
   border-top: 2px solid #808080;
 }
+#search-arrow {
+  color: #f17e33;
+}
 #search-results {
     padding-top: 8px;
     margin: 0;

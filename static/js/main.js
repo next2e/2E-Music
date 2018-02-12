@@ -88,8 +88,8 @@ $(function() {
       } else {
           $('#search-container').show("slow");
       }
-      $("#search-arrow").toggleClass("glyphicon-chevron-up");
       $("#search-arrow").toggleClass("glyphicon-chevron-down");
+      $("#search-arrow").toggleClass("glyphicon-chevron-up");
       $("#toggle-search").blur();
   });
   $('#url').keypress(function(e) {
