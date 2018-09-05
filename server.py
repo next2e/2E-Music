@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from gevent.wsgi import WSGIServer
+from gevent.pywsgi import WSGIServer
 from requests import get
 from random import choice
 import sys
